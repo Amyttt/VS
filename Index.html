@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VS Home Design & Decor Point</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+    
+    /* Header with VS Logo and Branding */
+    .header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    .logo-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    
+    .vs-logo {
+      width: 60px;
+      height: 60px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      border-radius: 8px;
+    }
+    
+    .vs-logo span {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+    
+    .tagline {
+      font-size: 14px;
+      color: #fbbf24;
+      margin-top: 5px;
+      letter-spacing: 1px;
+    }
+    
+    .company-name {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 10px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .solution-text {
+      color: #dc2626;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .founder-info {
+      background: #dbeafe;
+      border: 2px solid #3b82f6;
+      padding: 15px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 10px 0;
+    }
+    
+    .founder-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1e40af;
+    }
+    
+    .founder-title {
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 5px;
+    }
+    
+    .qualifications {
+      background: #1e3a8a;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      margin: 15px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    
+    .hindi-cta {
+      background: #dc2626;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    
+    /* Main Content Grid */
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 30px;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .section-header {
+      background: #dc2626;
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    
+    .contact-info {
+      background: #fbbf24;
+      padding: 20px;
+      line-height: 2;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      background: #333;
+      border-radius: 50%;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 10px;
+    }
+    
+    /* Services Section */
+    .services-section {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .services-list {
+      background: #fbbf24;
+      padding: 20px;
+      border-radius: 0 0 12px 12px;
+    }
+    
+    .service-item {
+      border: 1px solid #333;
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      background: white;
+      font-weight: 500;
+    }
+    
+    /* Gallery Section */
+    .gallery-section {
+      grid-column: 1 / -1;
+      margin-top: 30px;
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    
+    .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .gallery-caption {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      color: #1e3a8a;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .company-name {
+        font-size: 2rem;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .logo-section {
+        flex-direction: column;
+      }
+      
+      .vs-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <div class="logo-section">
+      <div class="vs-logo">
+        <span>VS</span>
+      </div>
+      <div>
+        <div class="tagline">PLAN|DESIGN|BUILD|FURNISH</div>
+      </div>
+    </div>
+    
+    <h1 class="company-name">VS HOME DESIGN & DECOR POINT</h1>
+    <div class="solution-text">A Complete Solution For Your 'Home Interior & Exterior Design'</div>
+    
+    <div class="founder-info">
+      <div class="founder-name">Founder- Er. SURBHI KUMARI</div>
+      <div class="founder-title">FLOOR PLANNER & INTERIOR DESIGNER</div>
+    </div>
+    
+    <div class="qualifications">
+      <div>B.Tech (Civil), RTU</div>
+      <div>Associate Member of IEI (AM3139886)</div>
+      <div>Registered Civil Engineer, Hazaribagh Nagar Nigam</div>
+      <div>Reg. No. - HMC/ENG/0007/2024</div>
+    </div>
+    
+    <div class="hindi-cta">
+      घर का नक्शा बनवाने एवं पास करवाने हेतु संपर्क करें।
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <div class="section-header">CONTACT US:</div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>Surbhi- 7859024522, 8239726889</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>Bishnu Dayal adv. 9835377673</div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>surbhik2906@gmail.com</div>
+        </div>
+      </div>
+      
+      <div class="section-header">ADDRESS:</div>
+      <div class="contact-info">
+        <div>Sai City Apartment, Gali No.10</div>
+        <div>Ramnagar, Hazaribagh (825301)</div>
+        <div>Jharkhand</div>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="gallery-section">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://source.unsplash.com/400x300/?floor-plan,architecture" alt="2D Floor Plan">
+          <div class="gallery-caption">2D Floor Plan (Vastushastra)</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://source.unsplash.com/400x300/?house-exterior,modern" alt="3D Front Elevation">
+          <div class="gallery-caption">3D Front Elevation</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://source.unsplash.com/400x300/?ceiling-design,chandelier" alt="Ceiling Design">
+          <div class="gallery-caption">Interior Design</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://source.unsplash.com/400x300/?terrace,garden" alt="Terrace Makeover">
+          <div class="gallery-caption">Terrace Makeover</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="services-section">
+      <div class="section-header">OUR SERVICES:</div>
+      <div class="services-list">
+        <div class="service-item">2D Floor Plan (Vastushastra)</div>
+        <div class="service-item">Approval drawings</div>
+        <div class="service-item">3D Front Elevation</div>
+        <div class="service-item">2D & 3D Visualization/Renders</div>
+        <div class="service-item">Interior Design</div>
+        <div class="service-item">Office & Shop Space Design</div>
+        <div class="service-item">Terrace Makeover</div>
+        <div class="service-item">Walk Through Video</div>
+        <div class="service-item">And Many More</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background: #1e3a8a; color: white; text-align: center; padding: 20px; margin-top: 40px;">
+    <p>&copy; 2025 VS Home Design & Decor Point. All rights reserved.</p>
+    <p>Professional Interior & Exterior Design Services</p>
+  </footer>
+</body>
+</html>
